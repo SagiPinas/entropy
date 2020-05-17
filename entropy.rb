@@ -13,21 +13,24 @@ def sendReport(type, count, socket)
 
  incidentTypes = ['earthquake','fire','flooding','accident','landslide']
 
-  reportData = {
-    :id => "2695506260470251",
-    :type => type,
-    :specified => "",
-    :details => "This just a test using entropy script",
-    :location => {
-      :lat=> "#{rand(4..20)}.509705",
-      :long=> "#{rand(120..124)}.001852"
-    },
-    :status => "unverfied",
-    :timestamp => Time.now
-  }
+
 
   for i in 1..count.to_i
     sleep 0.3
+
+    reportData = {
+      :id => "2695506260470251",
+      :type => type,
+      :specified => "",
+      :details => "This just a test using entropy script",
+      :location => {
+        :lat=> "14.50#{rand(1000..9705)}",
+        :long=> "121.00#{rand(1000..1852)}"
+      },
+      :status => "unverified",
+      :timestamp => Time.now
+    }
+
 
     if type == "rand"
       reportData[:type] = incidentTypes[rand(0..incidentTypes.length()-1)]
