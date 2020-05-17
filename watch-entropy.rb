@@ -16,9 +16,9 @@ socket.on :disconnect do
   puts "disconnected!!"
 end
 
-# socket.on :activity do |data|
-#   puts "> Activity interaction from API"
-# end
+socket.on :activity do |data|
+  puts "> Activity interaction from API"
+end
 
 socket.on :cancel_report do |data|
   print "> Report cancellation \n"
