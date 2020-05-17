@@ -21,15 +21,13 @@ end
 # end
 
 socket.on :cancel_report do |data|
-  print "> report cancellation \n"
+  print "> Report cancellation \n"
   print "====================== \n"
-  puts JSON.pretty_generate(data)
+  print JSON.pretty_generate(data)
 end
 
 socket.on :report do |data|
-  print "> SENT Report \n"
-  print "====================== \n"
-  puts JSON.pretty_generate(data)
+  puts "> SENT Report"
 end
 
 puts "Press any key to close connection to server"
