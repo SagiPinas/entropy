@@ -7,7 +7,6 @@ API_URL = "https://sagipinasV1.herokuapp.com"
 
 socket = SocketIO::Client::Simple.connect API_URL
 
-
 socket.on :connect do
   puts "connected"
 end
@@ -28,6 +27,8 @@ end
 
 socket.on :report do |data|
   puts "> SENT Report"
+  puts "==============="
+  puts "#{data}" 
 end
 
 puts "Press any key to close connection to server"

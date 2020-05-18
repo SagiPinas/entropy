@@ -13,8 +13,6 @@ def sendReport(type, count, socket)
 
  incidentTypes = ['earthquake','fire','flooding','accident','landslide']
 
-
-
   for i in 1..count.to_i
     sleep 0.3
 
@@ -30,7 +28,6 @@ def sendReport(type, count, socket)
       :status => "unverified",
       :timestamp => Time.now
     }
-
 
     if type == "rand"
       reportData[:type] = incidentTypes[rand(0..incidentTypes.length()-1)]
@@ -60,5 +57,3 @@ if count != "inf"
 else
   puts "Infinite Requests: not supported yet"
 end
-
-
