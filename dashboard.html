@@ -2,16 +2,28 @@
 
 <head>
 	<title>Entropy Dashboard</title>
+	<meta name="theme-color" content="#083072" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" />
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.0/socket.io.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.2/axios.min.js"> </script>
 </head>
 
-<style>
-
-</style>
-
 <body>
-	<nav class="navbar navbar-expand-lg text-white bg-light">
-		<a class="navbar-brand" href="#">Entropy</a>
+	<style>
+		.shadow {
+			box-shadow: 0 0 0.2rem rgba(0, 0, 0, 0.06) !important;
+		}
+
+		.top-bar {
+			height: 3px;
+			width: 100%;
+			background: linear-gradient(to right, #c31432, #240b36);
+		}
+	</style>
+	<div class="top-bar"></div>
+	<nav class="navbar navbar-expand-lg text-white bg-light shadow">
+		<a class="navbar-brand text-danger" href="#">Entropy</a>
 		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
 			aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 			<span class="navbar-toggler-icon"></span>
@@ -29,19 +41,9 @@
 					<th scope="col">Actions</th>
 				</tr>
 			</thead>
-			<tbody>
-
-				<tr>
-					<th scope="row">1</th>
-					<td>Jacob</td>
-					<td>Thornton</td>
-					<td>
-						<button class="btn btn-dark btn-sm">CANCEL</button </td> </tr> <tr>
-					<th scope="row">2</th>
-					<td>Jacob</td>
-					<td>Thornton</td>
-					<td>
-						<button class="btn btn-dark btn-sm">CANCEL</button </td> </tr> </tbody> </table> </div> </body> <script
-							src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.0/socket.io.js"></script>
+			<tbody id="table-data"></tbody>
+		</table>
+	</div>
+</body>
 
 </html>
