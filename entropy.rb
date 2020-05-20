@@ -38,7 +38,6 @@ def sendReport(type, count, socket,delay)
   end
 end
 
-
 validArgTypes = ['earthquake','fire','flooding','accident','landslide','rand']
 
 puts "=============================="

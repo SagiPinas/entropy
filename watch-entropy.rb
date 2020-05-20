@@ -28,7 +28,13 @@ end
 socket.on :report do |data|
   puts "> SENT Report"
   puts "==============="
-  puts "#{data}" 
+  puts "#{data}"
+end
+
+socket.on :report do |data|
+  puts "> Test Cancellation"
+  puts "==============="
+  puts "#{data}"
 end
 
 puts "Press any key to close connection to server"
