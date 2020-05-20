@@ -9,12 +9,13 @@ socket = SocketIO::Client::Simple.connect API_URL
 
 #!/usr/bin/env ruby
 
-def sendReport(type, count, socket)
+def sendReport(type, count, socket,delay)
 
  incidentTypes = ['earthquake','fire','flooding','accident','landslide']
 
   for i in 1..count.to_i
-    sleep 0.3
+
+    sleep delay.to_f
 
     reportData = {
       :id => "2695506260470251",
@@ -44,12 +45,14 @@ puts "=============================="
 puts "Running Entropy test script..."
 puts "=============================="
 
-type = ARGV[0];
-count = ARGV[1];
+type = ARGV[0]
+count = ARGV[1]
+delay = ARGV[2]
+
 
 if count != "inf"
   if validArgTypes.include? type
-    sendReport(type,count,socket)
+    sendReport(type,count,socket,delay)
   else
     puts "[FATAL ERROR]: unknown incident type provided: #{type}"
     puts "Please type rand if you want a random incident value."
