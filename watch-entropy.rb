@@ -31,8 +31,14 @@ socket.on :report do |data|
   puts "#{data}"
 end
 
-socket.on :report do |data|
+socket.on :test_cancel do |data|
   puts "> Test Cancellation"
+  puts "==============="
+  puts "#{data}"
+end
+
+socket.on :test_report do |data|
+  puts "> Test Report Trace"
   puts "==============="
   puts "#{data}"
 end

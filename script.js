@@ -3,17 +3,20 @@
 const coreURL = "https://sagipinasv1.herokuapp.com";
 const socket = io(coreURL);
 
-function cancelReport(id){
-  alert(id)
-  socket.emit("test_cancel",{id: id})
+function cancelReport(id) {
+  socket.emit("test_cancel", { id: id })
+
+  socket.on("cancel_report", () => {
+    renderTable()
+  })
 }
 
 
 
-const dataRow = (count,data) => {
+const dataRow = (count, data) => {
   return (`
  <tr>
- <th scope="row">${count+1}</th>
+ <th scope="row">${count + 1}</th>
   <td>${data.type}</td>
   <td>${data.details}</td>
   <td>
@@ -26,16 +29,16 @@ const dataRow = (count,data) => {
 const renderTable = () => {
   document.getElementById('table-data').innerHTML = "";
   axios.get(`${coreURL}/incidents`)
-  .then(res=> {
-     res.data.forEach((item,index)=>{
-       document.getElementById('table-data').innerHTML += dataRow(index,item)
-     })
-  })
+    .then(res => {
+      res.data.forEach((item, index) => {
+        document.getElementById('table-data').innerHTML += dataRow(index, item)
+      })
+    })
 }
 
 renderTable()
 
-socket.on("report",()=> {
+socket.on("report", () => {
   renderTable()
 })
 
