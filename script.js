@@ -31,7 +31,9 @@ const renderTable = () => {
   axios.get(`${coreURL}/incidents`)
     .then(res => {
       res.data.forEach((item, index) => {
-        document.getElementById('table-data').innerHTML += dataRow(index, item)
+        if (item.status === "unverified") {
+          document.getElementById('table-data').innerHTML += dataRow(index, item)
+        }
       })
     })
 }
