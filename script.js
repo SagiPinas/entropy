@@ -1,5 +1,3 @@
-
-
 const coreURL = "https://sagipinasv1.herokuapp.com";
 const socket = io(coreURL);
 
@@ -10,8 +8,6 @@ function cancelReport(id) {
     renderTable()
   })
 }
-
-
 
 const dataRow = (count, data) => {
   return (`
@@ -43,5 +39,3 @@ renderTable()
 socket.on("report", () => {
   renderTable()
 })
-
-

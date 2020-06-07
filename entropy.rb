@@ -4,7 +4,6 @@ require 'json'
 
 API_URL = "https://sagipinasV1.herokuapp.com"
 
-
 socket = SocketIO::Client::Simple.connect API_URL
 
 #!/usr/bin/env ruby
@@ -47,7 +46,6 @@ puts "=============================="
 type = ARGV[0]
 count = ARGV[1]
 delay = ARGV[2]
-
 
 if count != "inf"
   if validArgTypes.include? type
