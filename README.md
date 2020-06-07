@@ -12,7 +12,7 @@ __1.) Incident type__
 - fire
 - flooding
 - landslide
-- incident
+- accident
 - rand - random incident type
 
 __2.) No. of Requests__
