@@ -1,4 +1,4 @@
-### entropy
+# entropy
 > CLI first test tool for the SagiPinas Platform
 
 Simulates real use-case scenarios for the platform at varying speeds and request types to see the problems posed by putting the system under heavy load.

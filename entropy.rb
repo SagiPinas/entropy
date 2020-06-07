@@ -8,6 +8,28 @@ socket = SocketIO::Client::Simple.connect API_URL
 
 #!/usr/bin/env ruby
 
+# random bounding box
+
+def randomLatLng()
+  max_north=18.8
+  min_north=14
+  max_east=122
+  min_east=121.5
+  puts "#{rand(min_north..max_north)},#{rand(min_east..max_east)}"
+end
+
+def randLat()
+  max_lat=18.8
+  min_lat=14
+  puts rand(min_lat..max_lat);
+end
+
+def randLng()
+  max_lng=122
+  min_lng=121.5
+  puts rand(min_lng..max_lng);
+end
+
 def sendReport(type, count, socket,delay)
 
  incidentTypes = ['earthquake','fire','flooding','accident','landslide']
@@ -22,8 +44,8 @@ def sendReport(type, count, socket,delay)
       :specified => "",
       :details => "This just a test using entropy script",
       :location => {
-        :lat=> "14.50#{rand(1000..9705)}",
-        :long=> "121.00#{rand(1000..1852)}"
+        :lat=> randLat(),
+        :long=> randLng()
       },
       :status => "unverified",
       :timestamp => Time.now
