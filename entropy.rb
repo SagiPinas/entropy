@@ -19,15 +19,15 @@ def randomLatLng()
 end
 
 def randLat()
-  max_lat=18.8
-  min_lat=14
-  puts rand(min_lat..max_lat);
+  max_lat=14.9
+  min_lat=14.0
+  return rand(min_lat..max_lat);
 end
 
 def randLng()
-  max_lng=122
-  min_lng=121.5
-  puts rand(min_lng..max_lng);
+	max_lng=120.999
+  min_lng=120.003
+  return rand(min_lng..max_lng);
 end
 
 def sendReport(type, count, socket,delay)
